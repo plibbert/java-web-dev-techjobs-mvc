@@ -10,24 +10,9 @@
 
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 </div>
-    <!-- TODO #1 - Use a loop to display job results in a table. -->
+<!-- TODO #1 - Use a loop to display job results in a table. -->
 
-    <div>
-        <th:block>
-            <table th:each="job : ${jobs}" class="job-listing">
-                <tr>
-                    <ul>
-                    <li th:text="'ID: ' + ${job.id}"></li>
-                    <li th:text="'Name: ' + ${job.name}"></li>
-                    <li th:text="'Employer: ' + ${job.employer}"></li>
-                    <li th:text="'Location: ' + ${job.location}"></li>
-                    <li th:text="'Position Type: ' + ${job.positionType}"></li>
-                    <li th:text="'Skill: ' + ${job.coreCompetency}"></li>
-                    </ul>
-                </tr>
-            </table>
-        </th:block>
-    </div>
+<div th:replace="fragments :: job-list-table"></div>
 
 </body>
 </html>
